@@ -1,0 +1,30 @@
+{
+  "name": "Reembolso Romme",
+  "short_name": "Reembolso",
+  "description": "App de Solicitação de Reembolso - Romme Digital",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F4E8D3",
+  "theme_color": "#482B1C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
