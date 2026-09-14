@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Ícones -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Reembolso">
+    <meta name="theme-color" content="#530319">
+
+    <title>Reembolso Melle</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(160deg, #F4E8D3 0%, #E8D5B8 50%, #F4E8D3 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #530319;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 32px;
+            max-width: 380px;
+            width: 100%;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 32px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .logo-wrapper img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(72, 43, 28, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            animation: fadeIn 0.6s ease-out 0.1s both;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            opacity: 0.6;
+            margin-bottom: 48px;
+            font-weight: 400;
+            animation: fadeIn 0.6s ease-out 0.2s both;
+        }
+
+        .btn-entrar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 32px;
+            background: #530319;
+            color: #F4E8D3;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(72, 43, 28, 0.3);
+            animation: fadeIn 0.6s ease-out 0.3s both;
+        }
+
+        .btn-entrar:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 8px rgba(72, 43, 28, 0.3);
+        }
+
+        .btn-entrar svg {
+            width: 20px;
+            height: 20px;
+            fill: #F4E8D3;
+        }
+
+        .install-hint {
+            margin-top: 40px;
+            padding: 16px 20px;
+            background: rgba(72, 43, 28, 0.08);
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: 0.7;
+            animation: fadeIn 0.6s ease-out 0.5s both;
+            display: none;
+        }
+
+        .install-hint strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            opacity: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Decoração de fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(72, 43, 28, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="icon-192.png" alt="Melle">
+        </div>
+
+        <h1>Solicitação de Reembolso</h1>
+        <p class="subtitle">Melle</p>
+
+        <a href="https://script.google.com/a/macros/mellecreators.com/s/AKfycbxzOdkwBXUP6iac_osptQbfMfDdY7XCvuzfPceEh-YW5rc_NZNbKVxSLzsvUKiiON64/exec"
+            class="btn-entrar">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 17l5-5-5-5v10z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+            Entrar
+        </a>
+
+        <div class="install-hint" id="installHint">
+            <strong>💡 Dica</strong>
+            Adicione à tela inicial para abrir como um app!<br>
+            Toque em <strong>⋮</strong> → "Adicionar à tela inicial"
+        </div>
+    </div>
+
+    <script>
+        // Mostra dica de instalação se estiver no navegador (não standalone)
+        if (!window.matchMedia('(display-mode: standalone)').matches) {
+            document.getElementById('installHint').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
